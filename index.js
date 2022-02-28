@@ -34,7 +34,7 @@ server.on("connection", socket => {
             
             const date = new Date();
             const time = time_format(date, timezone)
-            socket.write(time)
+            socket.write(`HTTP/1.1 200 OK\n\n${time}`);
             socket.end()
             return;
         }
